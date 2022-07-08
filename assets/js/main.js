@@ -12,6 +12,12 @@
     var lastSelection;
     var disableBoard;
 
+    const EASY_TIMER_MIN = 4;
+    const HARD_TIMER_MIN = 6;
+
+    const EASY_BOARD_SIZE = 4;
+    const HARD_BOARD_SIZE = 6;
+
     const config = {};
 
     const matchedPairs = [];
@@ -187,8 +193,10 @@
         difficulty = startForm.elements["difficulty"].value;
         config.name = startForm.elements["name"].value;
         config.difficulty = difficulty;
-        config.timer = (difficulty === "easy" ? 4 : 6) * 60;
-        config.boardSize = difficulty === "easy" ? 4 : 6;
+        config.timer =
+            (difficulty === "easy" ? EASY_TIMER_MIN : HARD_TIMER_MIN) * 60;
+        config.boardSize =
+            difficulty === "easy" ? EASY_BOARD_SIZE : HARD_BOARD_SIZE;
         startForm.style.display = "none";
         loadGameboard(config);
         e.preventDefault();
