@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Remember me!</title>
+        <link rel="stylesheet" href="./assets/css/main.css" />
+    </head>
+    <body>
+        <form id="startForm">
+            <div>
+                <label for="name">Name: </label>
+                <input type="text" name="name" id="name" required />
+            </div>
+            <div>
+                <div>Difficulty:</div>
+                <div>
+                    <input
+                        type="radio"
+                        name="difficulty"
+                        value="easy"
+                        checked
+                        id="easy"
+                    />
+                    <label for="easy">Easy</label>
+                </div>
+                <div>
+                    <input
+                        type="radio"
+                        name="difficulty"
+                        value="hard"
+                        id="hard"
+                    />
+                    <label for="hard">Hard</label>
+                </div>
+            </div>
+            <input type="submit" value="Start" />
+        </form>
+        <div id="game">
+            <div id="countdown"></div>
+            <main id="board"></main>
+        </div>
+        <div id="winScreen">
+            Congratulation you won <br />
+            <button onclick="location.reload()">Play again</button>
+        </div>
+        <div id="loseScreen">
+            Sorry you lost <br />
+            <button onclick="location.reload()">Try again</button>
+        </div>
+        <div>
+            <center><h2>Leaderboard</h2></center>
+            <div class="leaderboardConfig">
+                <div id="difficultyText">easy</div>
+                <button id="toggleDifficulty">Toggle Difficulty</button>
+            </div>
+            <table id="leaderboard">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Name</th>
+                        <th>Difficulty</th>
+                        <th>Wrong Moves</th>
+                        <th>Total Moves</th>
+                        <th>Time(Seconds)</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <script src="./assets/js/main.js"></script>
+    </body>
+</html>

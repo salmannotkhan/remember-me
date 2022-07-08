@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100vh;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/* Form */
+
+#startForm {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+}
+
+#startForm div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding-block: 10px;
+}
+
+#startForm div div:first-child {
+    flex: 1;
+}
+
+#game {
+    display: none;
+}
+
+/* Board */
+
+#board {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#board button {
+    height: 50px;
+    width: 50px;
+}
+
+/* Countdown Timer */
+#countdown {
+    font-size: 25px;
+    text-align: center;
+    min-height: 50px;
+}
+
+.leaderboardConfig {
+    margin-inline: auto;
+    max-width: max-content;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+#leaderboard {
+    text-transform: capitalize;
+}
+
+table tr {
+    text-align: center;
+}
+
+table tr :is(td, th) {
+    border-left: 1px solid black;
+    padding-inline: 5px;
+}
+
+table tr :is(td, th):last-of-type {
+    border-right: 1px solid black;
+}
+
+#winScreen,
+#loseScreen {
+    display: none;
+    text-align: center;
+}
+
+:is(#winScreen, #loseScreen) button {
+    display: block;
+    padding: 10px;
+    margin-inline: auto;
+}
